@@ -24,10 +24,11 @@ function HomeScreen(props) {
     e.preventDefault();
     dispatch(listProducts(category, searchKeyword, sortOrder));
   };
-  const sortHandler = (e) => {
-    setSortOrder(e.target.value);
-    dispatch(listProducts(category, searchKeyword, sortOrder));
-  };
+ const sortHandler = (e) => {
+  const value = e.target.value;
+  setSortOrder(value);
+  dispatch(listProducts(category, searchKeyword, value));
+};
 
   return (
     <>
